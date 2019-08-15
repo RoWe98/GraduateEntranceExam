@@ -16,18 +16,48 @@ bool InitList(LinkList &L)
   return true;
 }
 
-bool creatList_tial(LinkList &L, int n)
+bool insertList_head(LinkList &L)
 {
-  int i = 0;
-  LNode* p;
-  for(i=n;i>0;i--)
+  int x;
+  LNode *p;
+  std::cout<<"input the data ends with 9999" << std::endl;
+  while(x!=9999)
   {
     p = (LNode*)malloc(sizeof(LNode));
     printf("num:");
-    scanf("%d",&p->data);
+    if(x!=9999){
+      scanf("%d",&x);
+    }else{
+      continue;
+    }
+    p->data=x;
     p->next=L->next;
     L->next=p;
   }
+  return true;
+}
+
+bool insertList_tial(LinkList &L)
+{
+  int x;
+  L = new LNode;
+  LNode *s,*r=L;
+  std::cout<<"input the data ends with 9999" << std::endl;
+  while(x!=9999)
+  {
+    std::cout<<"nums:";
+    if(x!=9999){
+      scanf("%d",&x);
+    }
+    else{
+      continue;
+    }
+    s = new LNode;
+    s->data=x;
+    r->next=s;
+    r=s;
+  }
+  r->next=NULL;
   return true;
 }
 
@@ -45,14 +75,24 @@ void output(LinkList L)
 
 int main()
 {
-  LinkList L;
-  if(InitList(L))
+  LinkList L1,L2;
+  if(InitList(L1))
   {
     std::cout << "Init Success!" << std::endl;
   }
-  if(creatList_tial(L,5))
+  printf("insert form head");
+  if(insertList_head(L1))
   {
     std::cout << "Insert Success!" << std::endl;
   }
-  output(L);
+  output(L1);
+  if(InitList(L2))
+    std::cout<<"Init Success!" << std::endl;
+  printf("insert from tial");
+  if(insertList_tial(L2))
+  {
+    std::cout<<"Insert Success!"<<std::endl;
+  }
+  output(L2);
+  return 0;
 }
