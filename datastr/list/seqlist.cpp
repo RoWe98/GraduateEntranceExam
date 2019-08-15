@@ -7,26 +7,27 @@ typedef int ElemType;
 
 typedef struct
 {
+    /* data */
     ElemType *data;
     int MaxSize,length;
 }SqList;
 
-bool InitList(SqList *L)
+void InitList(SqList *L)
 {
     L->data = (int*)malloc(sizeof(ElemType)*InitSize);
     L->length=0;
     L->MaxSize=100;
-    return true;
 }
 
 
 bool ListInsert(SqList *L,int i,ElemType e)
 {
+    int j = 0;
     if(i<1||i>L->length+1)
         return false;
     if(i>L->MaxSize+1)
         return false;
-    for(int j=L->length;j>=i;j--)
+    for(j=L->length;j>=i;j--)
     {
         L->data[j]=L->data[j-1];
     }
@@ -35,9 +36,21 @@ bool ListInsert(SqList *L,int i,ElemType e)
     return true;
 }
 
+bool ListDelete(SqList &L,int i)
+{
+  int j = 0;
+  if(i<1||i>L.length)
+    return false;
+  for(j=i;j<=L.length-1;j++)
+  {
+    L.data[j-1]=L.data[j];
+  }
+  L.length --;
+  return true;
+}
 void ListOutput(SqList *L)
 {
-    int i;
+    int i=0;
     for(i=0;i<L->length;i++)
     {
         printf("%d ",L->data[i]);
@@ -49,11 +62,12 @@ void ListOutput(SqList *L)
 int main()
 {
     SqList L;
+    int i = 0;
+    InitList(&L);
     int num =0;
-    if(InitList(&L));
-        printf("初始化成功！\n");
+    int locate = 0;
     printf("input the num under 5:\n");
-    for(int i=0;i<5;i++)
+    for(i=0;i<5;i++)
     {
         printf("NUM:");
         scanf("%d",&num);
@@ -67,5 +81,13 @@ int main()
     }
     printf("nums:");
     ListOutput(&L);
+    printf("delete num locates:");
+    scanf("%d",&locate);
+    if(ListDelete(L,locate))
+    {
+      printf("delete success!\n");
+      printf("Nums:\n");
+      ListOutput(&L);
+    }
     return 0;
 }
