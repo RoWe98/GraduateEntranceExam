@@ -64,7 +64,7 @@ int main()
   LinkStack S;
   int nums;
   if(InitStack(S)) std::cout<<"stack initlize Success!" << std::endl;
-  std::cout<<"input the nums ends with $"<<std::endl;
+  std::cout<<"input the nums ends with 9999"<<std::endl;
   while(nums!=9999){
     std::cout<<"nums:";
     std::cin>>nums;
