@@ -25,12 +25,13 @@ bool insertList_head(LinkList &L)
   {
     p = (LNode*)malloc(sizeof(LNode));
     printf("num:");
+    scanf("%d",&x);
     if(x!=9999){
-      scanf("%d",&x);
-    }else{
+      p->data=x;
+    }
+    else{
       continue;
     }
-    p->data=x;
     p->next=L->next;
     L->next=p;
   }
@@ -46,14 +47,13 @@ bool insertList_tial(LinkList &L)
   while(x!=9999)
   {
     std::cout<<"nums:";
+    scanf("%d",&x);
+    s = new LNode;
     if(x!=9999){
-      scanf("%d",&x);
-    }
-    else{
+      s->data=x;
+    }else{
       continue;
     }
-    s = new LNode;
-    s->data=x;
     r->next=s;
     r=s;
   }
@@ -80,7 +80,7 @@ int main()
   {
     std::cout << "Init Success!" << std::endl;
   }
-  printf("insert form head");
+  printf("insert form head\n");
   if(insertList_head(L1))
   {
     std::cout << "Insert Success!" << std::endl;
@@ -88,7 +88,7 @@ int main()
   output(L1);
   if(InitList(L2))
     std::cout<<"Init Success!" << std::endl;
-  printf("insert from tial");
+  printf("insert from tial\n");
   if(insertList_tial(L2))
   {
     std::cout<<"Insert Success!"<<std::endl;
