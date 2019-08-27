@@ -88,7 +88,7 @@ int main()
     std::cout<<std::endl;
 
     std::cout<<"nextval:";
-    for(int i=1;i<=pLen;i++)
+    for(int i=1;i<=tLen;i++)
     {
       printf("%d ",nextval[i]);
     }
