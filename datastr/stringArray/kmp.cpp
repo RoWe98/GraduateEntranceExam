@@ -80,7 +80,7 @@ int main()
     GetNext(t,tLen,next);
     GetNext_val(t,tLen,nextval);
     
-    std::cout<<"next:";
+    std::cout<<"next:   ";
     for(int i=1;i<=tLen;i++)
     {
         printf("%d ",next[i]);
@@ -94,7 +94,7 @@ int main()
     }
     std::cout<<std::endl;
     
-    int kmp_index = Index_KMP(p,t,1,pLen,tLen,next);
+    int kmp_index = Index_KMP(p,t,1,pLen,tLen,nextval);
     std::cout<<"kmp_index:"<<kmp_index<<std::endl;
     return 0;
 }
