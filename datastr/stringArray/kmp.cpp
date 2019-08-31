@@ -20,7 +20,7 @@ void GetNext_val(char ch[],int cLen,int nextval[])
   }
 }
 
-void GetNext(char ch[],int cLen,int next[]){//cLen为串ch的长度
+void GetNext(char ch[],int cLen,int next[]){//cLen is the length of ch
     next[1] = 0;
     int i = 1,j = 0;
     while(i<=cLen){
