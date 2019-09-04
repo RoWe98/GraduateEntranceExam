@@ -73,8 +73,8 @@ int main()
     }
     std::cout<<std::endl;
 
-    std::cout<<"p string length:"<<pLen<<std::endl;
-    std::cout<<"t string length:"<<tLen<<std::endl;
+    std::cout<<"P string length:"<<pLen<<std::endl;
+    std::cout<<"T string length:"<<tLen<<std::endl;
     int next[50];
     int nextval[50];
     GetNext(t,tLen,next);
@@ -95,6 +95,6 @@ int main()
     std::cout<<std::endl;
     
     int kmp_index = Index_KMP(p,t,1,pLen,tLen,nextval);
-    std::cout<<"The t string start from:"<<kmp_index<<std::endl;
+    std::cout<<"The T string start from "<<kmp_index<<" in the P String"<<std::endl;
     return 0;
 }
