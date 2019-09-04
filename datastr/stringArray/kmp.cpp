@@ -95,6 +95,6 @@ int main()
     std::cout<<std::endl;
     
     int kmp_index = Index_KMP(p,t,1,pLen,tLen,nextval);
-    std::cout<<"the t string start from:"<<kmp_index<<std::endl;
+    std::cout<<"The t string start from:"<<kmp_index<<std::endl;
     return 0;
 }
