@@ -45,7 +45,7 @@ bool PrintElement(char e){
 bool PreOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
-		cout<<T->data;
+		cout<<T->data<<" ";
 		PreOrderTraverse(T->lchild);
 		PreOrderTraverse(T->rchild);
 		return true;
@@ -58,7 +58,7 @@ bool InOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
 		InOrderTraverse(T->lchild);
-		cout<<T->data;
+		cout<<T->data<<" ";
 		InOrderTraverse(T->rchild);
 		return true;
 	}else{
@@ -72,7 +72,7 @@ bool PostOrderTraverse(BiTree T)
 	{
 		PostOrderTraverse(T->lchild);
 		PostOrderTraverse(T->rchild);
-		cout<<T->data;
+		cout<<T->data<<" ";
 		return true;
 	}
 	else
