@@ -37,15 +37,14 @@ bool CreateBiTree(BiTree &T)
 
 
 //Visit()
-bool PrintElement(char e){
-	cout << e << " ";
-	return true;
+void Visit(BiTree T){
+	cout << T->data << " ";
 }
 
 bool PreOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
-		cout<<T->data<<" ";
+		Visit(T);
 		PreOrderTraverse(T->lchild);
 		PreOrderTraverse(T->rchild);
 		return true;
@@ -58,7 +57,7 @@ bool InOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
 		InOrderTraverse(T->lchild);
-		cout<<T->data<<" ";
+		Visit(T);
 		InOrderTraverse(T->rchild);
 		return true;
 	}else{
@@ -72,7 +71,7 @@ bool PostOrderTraverse(BiTree T)
 	{
 		PostOrderTraverse(T->lchild);
 		PostOrderTraverse(T->rchild);
-		cout<<T->data<<" ";
+		Visit(T);
 		return true;
 	}
 	else
