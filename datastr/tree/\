@@ -1,0 +1,67 @@
+#include "iostream"
+#include "cstdio"
+#include "cstdlib"
+#include "malloc.h"
+
+using namespace std;
+
+typedef char TElemType;
+
+typedef struct BiTNode{
+	TElemType data;
+	struct BiTNode *lchild,*rchild;
+}BiTNode,*BiTree;
+
+bool InitBiTree(BiTree &T)
+{
+	T = new BiTNode;
+	T->lchild=NULL;
+	T->rchild=NULL;
+	return true;
+}
+
+bool CreateBiTree(BiTree &T)
+{
+	char ch;
+	cout<<"input:";
+	cin >> ch;
+	if(ch=='#'){
+		T=NULL;
+	}else{
+		T = new BiTNode;
+		T->data = ch;
+		CreateBiTree(T->lchild);
+		CreateBiTree(T->rchild);
+	}
+	return true;
+}
+
+
+//Visit()
+bool PrintElement(char e){
+	cout << e << " ";
+	return true;
+}
+
+bool PreOrderTraverse(BiTree T,bool (*PrintElement)(char))
+{
+	if(T){
+		if(PrintElement(T->data))
+			if(PreOrderTraverse(T->lchild,PrintElement))
+				if(PreOrderTraverse(T->rchild,PrintElement)) return true;
+		return false;
+	}else{
+		return false;
+	}
+}
+
+int main()
+{
+	BiTree T;
+	if(InitBiTree(T)) cout<<"init success!"<<endl;
+	if(CreateBiTree(T)) cout<<"create binary tree success!"<<endl;
+	cout << "PreOrderTraverse:";
+	if(PreOrderTraverse(T,PrintElement));
+	cout<<endl;
+	return 0;
+}
