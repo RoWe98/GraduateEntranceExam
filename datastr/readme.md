@@ -14,4 +14,7 @@
 - 串
   - kmp算法
 
-# tree 
+# tree
+- 树 BiTree(二叉树)
+
+
