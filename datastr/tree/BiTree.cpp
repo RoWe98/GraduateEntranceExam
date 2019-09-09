@@ -7,11 +7,13 @@ using namespace std;
 
 typedef char TElemType;
 
+//define the BiTNode of the Binary Tree
 typedef struct BiTNode{
 	TElemType data;
 	struct BiTNode *lchild,*rchild;
 }BiTNode,*BiTree;
 
+//InitBiTree
 bool InitBiTree(BiTree &T)
 {
 	T = new BiTNode;
@@ -20,6 +22,7 @@ bool InitBiTree(BiTree &T)
 	return true;
 }
 
+//CreateBiTree
 bool CreateBiTree(BiTree &T)
 {
 	char ch;
@@ -53,6 +56,7 @@ bool PreOrderTraverse(BiTree T)
 	}
 }
 
+// InOrderTraverse
 bool InOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
@@ -65,6 +69,7 @@ bool InOrderTraverse(BiTree T)
 	}
 }
 
+//PostOrderTraverse
 bool PostOrderTraverse(BiTree T)
 {
 	if(T!=NULL)
