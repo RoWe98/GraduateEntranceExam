@@ -92,14 +92,14 @@ int main()
 	cout<<"input:";
 	if(CreateBiTree(T)) cout<<"create binary tree success!"<<endl;
 	cout << "PreOrderTraverse:";
-	if(PreOrderTraverse(T));
-	cout<<endl;
+	if(PreOrderTraverse(T))
+	  cout<<endl;
 	cout << "InOrderTraverse:";
-	if(InOrderTraverse(T));
-	cout << endl;
+	if(InOrderTraverse(T))
+	  cout << endl;
 	cout << "PostOrderTraverse:";
-	if(PostOrderTraverse(T));
-	cout << endl;
+	if(PostOrderTraverse(T))
+	  cout << endl;
 	return 0;
 }
 
