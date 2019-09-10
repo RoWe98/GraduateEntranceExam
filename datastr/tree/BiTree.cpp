@@ -2,6 +2,7 @@
 #include "cstdio"
 #include "cstdlib"
 #include "malloc.h"
+#include "stack"
 
 using namespace std;
 
@@ -69,6 +70,8 @@ bool InOrderTraverse(BiTree T)
 	}
 }
 
+
+
 //PostOrderTraverse
 bool PostOrderTraverse(BiTree T)
 {
@@ -96,6 +99,8 @@ int main()
 	  cout<<endl;
 	cout << "InOrderTraverse:";
 	if(InOrderTraverse(T))
+	  cout << endl;
+	if(InOrderTraverse_stack(T))
 	  cout << endl;
 	cout << "PostOrderTraverse:";
 	if(PostOrderTraverse(T))
