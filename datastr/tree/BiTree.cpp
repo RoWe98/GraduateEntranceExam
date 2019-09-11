@@ -2,16 +2,19 @@
 #include "cstdio"
 #include "cstdlib"
 #include "malloc.h"
+#include "stack"
 
 using namespace std;
 
 typedef char TElemType;
 
+//define the BiTNode of the Binary Tree
 typedef struct BiTNode{
 	TElemType data;
 	struct BiTNode *lchild,*rchild;
 }BiTNode,*BiTree;
 
+//InitBiTree
 bool InitBiTree(BiTree &T)
 {
 	T = new BiTNode;
@@ -20,6 +23,7 @@ bool InitBiTree(BiTree &T)
 	return true;
 }
 
+//CreateBiTree
 bool CreateBiTree(BiTree &T)
 {
 	char ch;
@@ -53,6 +57,7 @@ bool PreOrderTraverse(BiTree T)
 	}
 }
 
+// InOrderTraverse
 bool InOrderTraverse(BiTree T)
 {
 	if(T!=NULL){
@@ -65,6 +70,9 @@ bool InOrderTraverse(BiTree T)
 	}
 }
 
+
+
+//PostOrderTraverse
 bool PostOrderTraverse(BiTree T)
 {
 	if(T!=NULL)
@@ -88,10 +96,19 @@ int main()
 	if(CreateBiTree(T)) cout<<"create binary tree success!"<<endl;
 	cout << "PreOrderTraverse:";
 	if(PreOrderTraverse(T))
+<<<<<<< HEAD
 	  cout <<endl;
 	cout << "InOrderTraverse:";
 	if(InOrderTraverse(T))
 	  cout << endl;
+=======
+	  cout<<endl;
+	cout << "InOrderTraverse:";
+	if(InOrderTraverse(T))
+	  cout << endl;
+	if(InOrderTraverse_stack(T))
+	  cout << endl;
+>>>>>>> 906ec619e0db1e186ca87ff4cb3bdbb14bd60199
 	cout << "PostOrderTraverse:";
 	if(PostOrderTraverse(T))
 	  cout << endl;
