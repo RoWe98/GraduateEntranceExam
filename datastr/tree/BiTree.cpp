@@ -104,13 +104,53 @@ bool PostOrderTraverse(BiTree T)
 	}
 }
 
+//Depth of BiTree 
+int Depth(BiTree T)
+{
+  if(T==NULL) return 0;
+  else{
+    int m = Depth(T->lchild);
+    int n = Depth(T->rchild);
+    if(m>n) return (m+1);
+    else return (n+1);
+  }
+}
+
+//NodeCount 
+int NodeCount(BiTree T)
+{
+  if(T==NULL)
+    return 0;
+  else{
+    return NodeCount(T->lchild)+NodeCount(T->rchild)+1;
+  }
+}
+
+//LeafCount 
+int LeafCount(BiTree T)
+{
+  if(T==NULL)
+    return 0;
+  if(T->lchild==NULL&&T->rchild==NULL)
+    return 1;
+  else{
+    return LeafCount(T->lchild)+LeafCount(T->rchild);
+  }
+}
 
 int main()
 {
 	BiTree T;
-	if(InitBiTree(T)) cout<<"init success!"<<endl;
+	int depth=0;
+  int nodeCount = 0;
+  int leafCount = 0;
+  if(InitBiTree(T)) cout<<"init success!"<<endl;
 	cout<<"input:";
 	if(CreateBiTree(T)) cout<<"create binary tree success!"<<endl;
+  depth = Depth(T);
+  nodeCount = NodeCount(T);
+  leafCount = LeafCount(T);
+  cout << "Depth:"<<depth<<" "<<"nodeCount:"<<nodeCount<<" "<<"leafCount:"<<leafCount<<endl;
 	cout << "PreOrderTraverse:";
 	if(PreOrderTraverse(T))
 	  cout <<endl;
