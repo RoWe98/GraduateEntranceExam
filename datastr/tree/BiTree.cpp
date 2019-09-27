@@ -116,6 +116,8 @@ int Depth(BiTree T)
   }
 }
 
+int NodeCount
+
 //NodeCount 
 int NodeCount(BiTree T)
 {
