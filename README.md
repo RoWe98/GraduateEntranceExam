@@ -4,5 +4,5 @@ This repository including my Graduate Entrance Exam review file abour data struc
 - **datastr** The DataStructrue Code
 - **OperatingSystem** The Operating System Code
 
-[blog](https://www.luoshaoqi.cn)
+[blog](https://blog.luoshaoqi.cn)
 [Contact Me](wzx8551517@163.com)
