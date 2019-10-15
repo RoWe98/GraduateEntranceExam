@@ -37,6 +37,7 @@ bool SearchBST(BSTree T,KeyType key,BSTree f,BSTree &p)
 //Insert BSTree
 bool InsertBSTree(BSTree &T,ElemType e)
 {
+    
     BSTNode *p;
     BSTNode *s;
     if(!SearchBST(T,e.key,NULL,p)){
@@ -90,6 +91,9 @@ int main()
         if(e.key!=999){
             if(InsertBSTree(T,e)){
                 cout << "insert Success!" << endl;
+            }
+            else{
+                cout << "Elem already exist!"<<endl;
             }
         }
         else{
