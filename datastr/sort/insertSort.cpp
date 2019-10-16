@@ -45,6 +45,22 @@ void InsertSort(SqList &L)
   }
 }
 
+void BInsertSort(SqList &L)
+{
+  int i,j,low,mid,high;
+  for(i=2;i<=L.length;++i){
+    L.r[0]=L.r[i];
+    low=1;high=i-1;
+    while(low<=high){
+      mid = (low+high)/2;
+      if(L.r[0].key<L.r[mid].key) high=mid-1;
+      else low=mid+1;
+    }
+    for(j=i-1;j>=high+1;--j) L.r[j+1]=L.r[j];
+    L.r[high+1]=L.r[0];
+  }
+}
+
 void Output(SqList &L)
 {
   int i=0;
@@ -64,6 +80,9 @@ int main()
   Output(L);
   InsertSort(L);
   cout << "Current SqList data after InsertSort: "<<endl;
+  Output(L);
+  BInsertSort(L);
+  cout << "Current SqList data after BInsertSort: "<<endl;
   Output(L);
   return 0;
 }
