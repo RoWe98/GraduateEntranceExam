@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define MAXSIZE 20
+#define MAXSIZE 10
 typedef int KeyType;
 typedef struct{
   KeyType key;
@@ -31,14 +31,12 @@ void CreateSqList(SqList &L)
 
 void InsertSort(SqList &L)
 {
-  int i=0;
-  int j=0;
+  int i,j;
   for(i=2;i<=L.length;++i)
   {
     if(L.r[i].key<L.r[i-1].key){
       L.r[0]=L.r[i];
-      L.r[i]=L.r[i-1];
-      for(int j=i-2;L.r[0].key<L.r[j].key;--j)
+      for(j=i-1;L.r[0].key<L.r[j].key;--j)
       {
         L.r[j+1]=L.r[j];
       }
