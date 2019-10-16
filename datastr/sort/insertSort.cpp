@@ -62,10 +62,10 @@ int main()
   SqList L;
   InitSqList(L);
   CreateSqList(L);
-  cout << "now SqList data: ";
+  cout << "now SqList data: "<<endl;
   Output(L);
   InsertSort(L);
-  cout << "Current SqList data after InsertSort: ";
+  cout << "Current SqList data after InsertSort: "<<endl;
   Output(L);
   return 0;
 }
