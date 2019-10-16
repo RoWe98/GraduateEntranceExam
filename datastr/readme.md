@@ -39,3 +39,6 @@
   - 平衡二叉树
 - hash
   - hash search
+
+- Sort
+  - insertSort
