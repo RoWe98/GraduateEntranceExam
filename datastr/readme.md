@@ -42,3 +42,4 @@
 
 - Sort
   - insertSort
+	- SwitchSort
