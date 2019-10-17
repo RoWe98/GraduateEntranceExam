@@ -1,3 +1,9 @@
+/*
+这里包括插入排序的算法
+1.直接插入排序
+2.折半插入排序
+*/
+
 #include "iostream"
 
 using namespace std;
