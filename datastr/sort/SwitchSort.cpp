@@ -52,6 +52,33 @@ void Bubble_Sort(SqList &L)
     }
 }
 
+
+//Get the pivotloc 
+int Partition(SqList &L,int low,int high)
+{
+  L.r[0]=L.r[low];
+  int pivotloc = L.r[low].key;
+  while(low<high){
+    while(low<high&&L.r[high].key>=pivotloc) --high;
+    L.r[low]=L.r[high];
+    while(low<high&&L.r[low].key<=pivotloc) ++low;
+    L.r[high]=L.r[low];
+  }
+  L.r[low]=L.r[0];
+  return low;
+}
+
+//QuickSort
+void QSort(SqList &L,int low,int high)
+{
+  int pivotloc;
+  if(low<high){
+    pivotloc = Partition(L,low,high);
+    QSort(L,low,pivotloc-1);
+    QSort(L,pivotloc+1,high);
+  }
+}
+
 void Output(SqList &L)
 {
   int i=0;
@@ -70,6 +97,9 @@ int main()
     cout << "BubbleSort:"<<endl;
     Output(L);
     Bubble_Sort(L);
+    Output(L);
+    cout << "QuickSort:"<<endl;
+    QSort(L,1,L.length);
     Output(L);
     return 0;
 }

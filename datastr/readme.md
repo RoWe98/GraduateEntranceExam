@@ -42,4 +42,9 @@
 
 - Sort
   - insertSort
-	- SwitchSort
+    - 直接插入排序
+    - 折半插入排序
+  - SwitchSort
+    - 冒牌排序
+    - 快速排序
+  - SelectSort
