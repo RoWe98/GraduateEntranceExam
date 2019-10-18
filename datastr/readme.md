@@ -37,10 +37,10 @@
 - 动态查询 
   - 二叉搜索树 BSTree
   - 平衡二叉树
-- hash
-  - hash search
+- hash 哈希
+  - hash search 哈希查找
 
-- Sort 排序
+# Sort 排序
   - insertSort
     - 直接插入排序
     - 折半插入排序
