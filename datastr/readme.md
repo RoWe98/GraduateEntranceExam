@@ -30,7 +30,7 @@
   - 深度优先遍历
   - 广度优先遍历
 
-# search
+# search 查找
 - 循序查询 SStable
   - 顺序查找
   - 折半查找
@@ -40,7 +40,7 @@
 - hash
   - hash search
 
-- Sort
+- Sort 排序
   - insertSort
     - 直接插入排序
     - 折半插入排序
@@ -48,3 +48,5 @@
     - 冒牌排序
     - 快速排序
   - SelectSort
+    - 直接选择排序
+    - 堆排序
