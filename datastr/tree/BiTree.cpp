@@ -116,7 +116,6 @@ int Depth(BiTree T)
   }
 }
 
-int NodeCount
 
 //NodeCount 
 int NodeCount(BiTree T)
@@ -140,19 +139,29 @@ int LeafCount(BiTree T)
   }
 }
 
+int DuTwoCount(BiTree T)
+{
+  int s;
+  if(T==NULL) return 0;
+  s = (T->lchild!=NULL)&&(T->rchild!=NULL);
+  return s+DuTwoCount(T->lchild)+DuTwoCount(T->rchild);
+}
+
 int main()
 {
 	BiTree T;
 	int depth=0;
   int nodeCount = 0;
   int leafCount = 0;
+  int du2Count=0;
   if(InitBiTree(T)) cout<<"init success!"<<endl;
 	cout<<"input:";
 	if(CreateBiTree(T)) cout<<"create binary tree success!"<<endl;
   depth = Depth(T);
   nodeCount = NodeCount(T);
   leafCount = LeafCount(T);
-  cout << "Depth:"<<depth<<" "<<"nodeCount:"<<nodeCount<<" "<<"leafCount:"<<leafCount<<endl;
+  du2Count = DuTwoCount(T);
+  cout << "Depth:"<<depth<<" "<<"nodeCount:"<<nodeCount<<" "<<"leafCount:"<<leafCount<<" "<<"du2Count:"<<du2Count<<endl;
 	cout << "PreOrderTraverse:";
 	if(PreOrderTraverse(T))
 	  cout <<endl;
